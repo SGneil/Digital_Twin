@@ -1,0 +1,66 @@
+使用命令列開啟UVR5的WebUI
+python tools/uvr5/use_uvr5.py
+
+參數測試
+model_choose =  HP5_only_main_vocal
+dir_wav_input =  E:\Python model\GPT-SoVITS\DATA\Test\resource
+opt_vocal_root =  E:\Python model\GPT-SoVITS\DATA\Test\uvr5_vocals
+wav_inputs =  None
+opt_ins_root =  E:\Python model\GPT-SoVITS\DATA\Test\uvr5_others
+agg =  10
+format0 =  flac
+
+
+音頻分割
+python tools/use_slice_audio.py
+    --input_path path_to_original_audio_file_or_directory \
+    --output_path directory_where_subdivided_audio_clips_will_be_saved \
+    --db_threshold The dB threshold for silence detection \
+    --min_length minimum_duration_of_each_subclip \
+    --min_interval shortest_time_gap_between_adjacent_subclips \ 
+    --hop_size step_size_for_computing_volume_curve \
+    --max_sil_kept maximum silence length kept around the sliced clip \
+    --max_amp maximum amplitude of the sliced audio clips \
+    --alpha alpha value for amplitude adjustment
+
+參數測試
+input_path = "E:\\Python model\\GPT-SoVITS\\DATA\\Test\\uvr5_vocals"
+output_path = "E:\\Python model\\GPT-SoVITS\\DATA\\Test\\slicer"
+db_threshold = -25
+min_length = 4000
+min_interval = 300
+hop_size = 10
+max_sil_kept = 500
+max_amp = 0.9
+alpha = 0.25
+
+input_path: 音频自动切分输入路径，可文件可文件夹
+output_root: 切分后的子音频的输出根目录
+
+
+ASR 標記
+python tools/asr/funasr_asr.py
+
+測試參數
+input_folder = "E:\Python model\GPT-SoVITS\DATA\Test\slicer"
+output_folder = "E:\Python model\GPT-SoVITS\DATA\Test\asr_opt"
+model_size = "large"
+language = "zh"
+
+execute_asr(input_folder, output_folder, model_size, language)
+
+一件三連
+python src/preprocess/use_process.py
+
+測試參數
+input_txt_path = "E:\\Python model\\123\\GPT-SoVits\\DATA\\Test\\asr_opt\\slicer.list"
+save_path = "E:\\Python model\\123\\GPT-SoVits\\logs\\Test"
+input_wav_path = "E:\\Python model\\123\\GPT-SoVits\\DATA\\Test\\slicer"
+
+# 訓練(1)train sovits model
+python src/train/train_sovits.py -c src/configs/sovits.json -n Test -t sovits -e 8 -lr 0.4 -bs 8 -nw 0 --save_every_epoch 4 --keep_ckpts 4
+
+
+# 訓練(2)train gpt mpdel
+
+python src/train/train_gpt.py -c src/configs/s1longer.yaml -n Test -e 15 -bs 8 -nw 0 --save_every_epoch 5

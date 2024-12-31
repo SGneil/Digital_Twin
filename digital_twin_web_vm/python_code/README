@@ -1,0 +1,8 @@
+# 移動到python_code資料夾
+cd python_code
+
+# 打開STT
+python3 STT_Service.py
+
+# 打開音檔傳送
+python3 sent_VoiceData.py

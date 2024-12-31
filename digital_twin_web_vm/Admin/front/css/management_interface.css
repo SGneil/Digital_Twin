@@ -1,0 +1,260 @@
+/* 登入 */
+.card-bg {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile-container {
+    margin-top: 120px; /* 根據實際情況調整 */
+    margin-bottom: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 為了與登錄容器相匹配，這裡做了些微調 */
+    padding: 20px;
+    max-width: 400px; /* 或者使用max-width以便更好的響應屏幕尺寸 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 用户内容容器也使用flex居中对齐 */
+    justify-content: center;
+}
+
+.user-info h2, .user-details p, .user-actions button {
+    color: #333; /* 文本颜色 */
+    margin-bottom: 10px; /* 統一間距 */
+}
+
+.user-info h2 {
+    margin-bottom: 20px;
+}
+
+.user-profile-card {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    padding: 16px;
+    margin-top: 20px;
+}
+
+.user-avatar {
+    margin-right: 24px; /* 添加大頭貼和詳情之間的間隔 */
+}
+
+.user-avatar img {
+    width: 100px; /* 固定寬度 */
+    height: auto; /* 自動高度以保持圖片比例 */
+    border-radius: 50%; /* 圓形大頭貼 */
+    border: 3px solid #d4d4d4; /* 可選：為大頭貼添加邊框 */
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.user-details p {
+    margin: 4px 0; /* 細微調整名稱和Email之間的間距 */
+    font-size: 16px;
+}
+
+.user-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #d4d4d4; /* 使用更粗的边框 */
+    margin-bottom: 20px; /* 增加與下方內容的間隔 */
+}
+
+.user-details p {
+    font-size: 16px; /* 較原始資訊文本縮小字號 */
+    margin: 5px 0;
+}
+
+/* 選擇功能卡 */
+.select-card h4 {
+    font-weight: bold;
+}
+
+.select-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* 按鈕樣式 */
+.btn {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    min-width: 200px;
+    background: #FFFFFF;
+    border: 2px solid rgb(190, 131, 83);
+    border-radius: 4px;
+    color: rgb(190, 131, 83);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+    padding: 10px 20px;
+}
+
+.btn span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: rgb(190, 131, 83);
+    transform: translateY(150%);
+    border-radius: 50%;
+    left: calc((var(--n) - 1) * 25%);
+    transition: 0.5s;
+    transition-delay: calc((var(--n) - 1) * 0.1s);
+    z-index: -1;
+}
+
+.btn:hover,
+.btn:focus {
+    color: white;
+}
+
+.btn:hover span {
+    transform: translateY(0) scale(2);
+}
+
+.btn span:nth-child(1) {
+    --n: 1;
+}
+
+.btn span:nth-child(2) {
+    --n: 2;
+}
+
+.btn span:nth-child(3) {
+    --n: 3;
+}
+
+.btn span:nth-child(4) {
+    --n: 4;
+}
+
+/* 手機 */
+@media (max-width: 768px) {
+
+    .user-profile-container {
+        margin-top: 60px; /* 上邊距 */
+        margin-bottom: 40px; /* 下邊距 */
+        margin-right: 10px; /* 右邊距 */
+        margin-left: 10px; /* 左邊距 */
+        background-color: rgba(255, 255, 255, 0.9); /* 背景色 */
+        border-radius: 8px; /* 圓角 */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 投影效果 */
+        padding: 15px; /* 內邊距 */
+        width: 90%; /* 寬度 */
+        max-width: none; /* 取消最大寬度限制 */
+        display: flex; /* Flexbox佈局 */
+        flex-direction: column; /* 垂直排列 */
+        align-items: center; /* 置中對齊 */
+        justify-content: center; /* 垂直置中 */
+    }
+
+    .card-bg {
+        width: 90%; /* 寬度設置為90% */
+        height: auto; /* 高度自動調整 */
+        flex-direction: column; /* 縱向排列 */
+        align-items: center; /* 置中對齊 */
+        justify-content: center; /* 垂直置中 */
+    }
+
+    .user-profile-card {
+        flex-direction: column; /* 改為縱向排列 */
+        align-items: center; /* 置中對齊 */
+        padding: 12px; /* 減少內邊距 */
+        overflow: hidden; /* 防止內容溢出 */
+    }
+
+    .user-avatar {
+        margin: 0 0 12px 0; /* 將間隔設為底部間隔以適應小螢幕 */
+        display: flex; /* 使頭像的樣式更靈活 */
+        justify-content: center; /* 置中對齊 */
+    }
+
+    .user-avatar img {
+        width: 80px; /* 調整手機版頭像寬度 */
+        height: auto; /* 自動高度保持圖片比例 */
+    }
+
+    .user-details {
+        text-align: center; /* 置中對齊文字 */
+        font-size: 14px; /* 減小字體大小以避免溢出 */
+    }
+
+    .user-details p {
+        margin: 4px 0; /* 保持名稱和 Email 之間的間距 */
+    }
+}
+
+/* 平板 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .user-profile-container {
+        margin-top: 80px; 
+        margin-bottom: 60px;
+        margin-right: 10px;
+        margin-left: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 80%;
+        max-width: none; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-bg {
+        width: 80%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .user-profile-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        overflow: hidden;
+    }
+
+    .user-avatar {
+        margin: 0 0 15px 0; 
+        display: flex;
+        justify-content: center;
+    }
+
+    .user-avatar img {
+        width: 90px; 
+        height: auto; 
+    }
+
+    .user-details {
+        text-align: center; 
+        font-size: 15px; 
+    }
+
+    .user-details p {
+        margin: 5px 0; 
+    }
+}

@@ -1,0 +1,140 @@
+body {
+    padding-top: 30px; /* 防止固定標題覆蓋頁面內容 */
+    font-family: Arial, sans-serif; /* 字體樣式 */
+    margin: 0;
+
+    background-image: url('../img/login_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.title {
+    position: fixed; /* 固定位置 */
+    top: 0; /* 距離頂部0像素 */
+    left: 0; /* 距離左側0像素 */
+    width: 100%; /* 標題寬度佔滿整個螢幕寬度 */
+    background-color: rgb(190, 131, 83); /* 背景顏色 */
+    color: white;
+    z-index: 999; /* 確保標題在畫面最頂部 */
+    height: 30px;
+}
+
+.title p {
+    height: 30px;
+    font-size: medium;
+    font-weight: bold;
+    color: wheat;
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+}
+
+.text-color {
+    color: yellow
+}
+
+.navbar {
+    position: fixed; /* 固定位置 */
+    top: 30; /* 距離頂部0像素 */
+    left: 0; /* 距離左側0像素 */
+    width: 100%; /* 標題寬度佔滿整個螢幕寬度 */
+    z-index: 999; /* 確保標題在畫面最頂部 */
+    background-color: white;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px 40px; /* 上下20px，左右40px */
+}
+
+.navbar .navbar-collapse {
+    justify-content: center; /* 使導航欄內容居中 */
+}
+.navbar .dropdown:hover .dropdown-menu {
+    display: block; /* 在鼠標懸停時顯示下拉選單 */
+}
+.navbar .navbar-icons {
+    margin-top: 10px;
+}
+.navbar .navbar-icon-link {
+    color: black;
+    margin-left: 10px;
+    font-size: 20px; /* 調整圖標大小 */
+}
+.navbar .navbar-icon-link:hover {
+    color: #ddd; /* 鼠標懸停時改變圖標顏色 */
+}
+
+.navbar-brand {
+    color: #C9AA79;
+}
+.navbar-brand:hover {
+    color: #C9AA79;
+}
+.nav-link {
+    color: black;
+    font-weight: bold;
+}
+.dropdown-item:hover, .nav-link:hover {
+    color: rgb(96, 32, 5);
+}
+
+@media (max-width: 992px) {
+    .navbar .navbar-icons {
+        display: none;
+    }
+    .navbar-brand {
+        font-size: 14px; /* 調整品牌文字大小 */
+        font-style: italic;
+    }
+}
+@media (max-width: 992px) {
+    .navbar .navbar-icons-bottom {
+        display: flex;
+        justify-content: left;
+        margin-top: 10px;
+    }
+}
+@media (min-width: 993px) {
+    .navbar .navbar-icons-bottom {
+        display: none;
+    }
+    .navbar-brand {
+        font-size: 16px; /* 調整品牌文字大小 */
+        font-style: italic;
+    }
+}
+
+.navbar-toggler-icon {
+    font-weight: bold;
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+}
+
+.logo-icon{
+    height: 50px;
+    cursor: pointer;
+}
+
+#back-to-top {
+    display: none; /* 預設隱藏按鈕 */
+    position: fixed; /* 固定在右下角 */
+    bottom: 20px;
+    right: 20px;
+    background-color: #00ccff; /* 按鈕背景顏色 */
+    color: #fff; /* 按鈕文字顏色 */
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+}

@@ -1,0 +1,11 @@
+# 虛擬環境
+.venv/
+
+# 你啥?
+.vscode/
+
+# 生成檔案資料夾
+animations/
+
+# 權重檔資料夾
+pretrained_weights/

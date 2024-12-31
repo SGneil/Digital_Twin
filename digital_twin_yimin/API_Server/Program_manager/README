@@ -1,0 +1,79 @@
+### 部屬 API_Server 中 Program_manager 專案
+```bash
+# Program_manager 專案部屬
+cd API_Server/Program_manager
+
+# 建立虛擬環境
+conda create --name Program_manager python=3.10 -y
+conda activate Program_manager
+
+# 安裝套件
+pip install flask
+
+
+# 使用 Program_manager 專案
+cd API_Server/Program_manager
+
+# 啟用虛擬環境
+conda activate Program_manager
+
+# 啟用伺服器
+python app.py
+```
+
+### 建立系統服務
+# 創建一個 systemd 服務檔案
+sudo nano /etc/systemd/system/program-manager.service
+
+# 建立啟動腳本
+sudo nano {API_Server 的完整路徑}/Program_manager/start_program_manager.sh
+# 複製以下內容到 start_program_manager.sh 檔案中
+"""
+#!/bin/bash
+source {conda 的完整路徑}/etc/profile.d/conda.sh
+conda activate Program_manager
+cd {API_Server 的完整路徑}/Program_manager
+python app.py 
+"""
+# 設定腳本權限
+sudo chmod +x {API_Server 的完整路徑}/Program_manager/start_program_manager.sh
+
+# 複製以下內容到 program-manager.service 檔案中
+"""
+[Unit]
+Description=Program Manager API Server
+After=network.target
+
+[Service]
+Type=simple
+User=m416-3090
+WorkingDirectory={API_Server 的完整路徑}/Program_manager
+ExecStart=/bin/bash {API_Server 的完整路徑}/Program_manager/start_program_manager.sh
+Restart=always
+RestartSec=10
+
+Environment=CONDA_PREFIX={conda 的完整路徑}
+Environment=CONDA_DEFAULT_ENV=Program_manager
+
+[Install]
+WantedBy=multi-user.target
+"""
+# 重新載入 systemd 設定
+sudo systemctl daemon-reload
+
+# 啟用並啟動服務
+sudo systemctl enable program-manager.service
+sudo systemctl start program-manager.service
+
+# 立即停止服務
+sudo systemctl stop program-manager
+
+# 禁用服務（取消開機自動啟動）
+sudo systemctl disable program-manager
+
+# 如果要完全移除服務
+sudo systemctl stop program-manager
+sudo systemctl disable program-manager
+sudo rm /etc/systemd/system/program-manager.service
+sudo systemctl daemon-reload
+sudo systemctl reset-failed

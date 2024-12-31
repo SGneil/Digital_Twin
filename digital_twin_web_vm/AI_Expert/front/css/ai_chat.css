@@ -1,0 +1,492 @@
+:root {
+  --bg-ctn: #cfcdd9;
+  --bg-wrap: #f0eff6;
+  --bg-input: #e8e8e8;
+  --white: #fff;
+  --black: #565367;
+  --grey: #9b99a6;
+  --dark-grey: #222831;
+  --purple: #6a5bc2;
+}
+
+img {
+  width: 100%;
+}
+
+.chat-bg {
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+
+/* 調整 .container-left 和 .container-right 的樣式 */
+.container-left, .container-right {
+  flex: 1;
+  overflow-y: auto;
+  display: flex; /* 確保容器使用 flexbox */
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 中心對齊 */
+  width: 100%; /* 確保容器全寬 */
+  height: auto; /* 高度自動調整 */
+}
+
+.image-display {
+  width: 80%; /* 設定圖片顯示的寬度 */
+  height: auto; /* 高度自動調整 */
+  margin-bottom: 20px;
+}
+
+.image-display img {
+  width: 100%; /* 確保圖片不超過容器寬度 */
+  height: auto; /* 自動調整高度 */
+  border-radius: 15px;
+  border: solid rgb(236, 139, 59) 5px;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* 調整縮略圖之間的間距 */
+  flex-wrap: wrap; /* 允許縮略圖換行 */
+}
+
+.thumbnail {
+  width: 100px; /* 設縮略圖的寬度 */
+  height: auto; /* 高度自動調整 */
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 15px;
+  border: solid rgb(236, 139, 59) 5px;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container-right {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 90%;
+  height: 65rem;
+  height: 80vh;
+  background: var(--bg-wrap);
+  border-radius: 5rem;
+  padding: 0px 40px 24px 40px;
+}
+
+/* Topbar Section */
+
+.topbar-left {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topbar-right span {
+  font-size: 1.8rem;
+}
+
+.topbar-right span:nth-child(2) {
+  font-size: 1.6rem;
+}
+
+/* Header Section */
+
+.header {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header p {
+  padding-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--grey);
+}
+
+.header span {
+  font-size: 1.6rem;
+}
+
+/* Chat Page Section */
+
+.chat-page {
+  height: 55vh;
+  overflow-y: scroll;
+}
+
+.chat-page::-webkit-scrollbar {
+  display: none;
+}
+
+/* User 1 和 User 2 的共同樣式 */
+.user-img {
+  display: block;
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.user-img img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.user-msg {
+  display: inline-block;
+  max-width: 70%;
+  margin-bottom: 15px;
+}
+
+.user-msg p {
+  padding: 1rem;
+  word-wrap: break-word;
+  font-size: 18px;
+}
+
+/* User 1 特定樣式 */
+.user1 {
+  clear: both;
+}
+
+.user1 .user-img {
+  float: left;
+  margin-right: 10px;
+}
+
+.user1 .user-msg {
+  float: left;
+}
+
+.user1 .user-msg p {
+  background: var(--white);
+  border-radius: 0 1.4rem 1.4rem 1.4rem;
+}
+
+/* User 2 特定樣式 */
+.user2 {
+  clear: both;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.user2 .user-img {
+  float: none;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.user2 .user-msg {
+  float: none;
+  text-align: right;
+  max-width: 70%;
+}
+
+.user2 .user-msg p {
+  display: inline-block;
+  background: var(--purple);
+  color: var(--white);
+  border-radius: 1.4rem 0 1.4rem 1.4rem;
+  padding: 1rem;
+  word-wrap: break-word;
+  font-size: 18px;
+}
+
+/* 時間戳樣式 */
+.user-msg .time {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--grey);
+  margin: 0.5rem 0;
+}
+
+.user2 .user-msg .time {
+  text-align: right;
+}
+
+/* 清除浮動 */
+.chat-page::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Chat Input Section */
+.chat-input {
+  width: 100%;
+  height: 4rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-input img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.chat-input input {
+  font-size: 16px;
+  width: 100%;
+  background: var(--bg-input);
+  border: none;
+  line-height: 2;
+  border-radius: 3rem;
+  margin: 0 1rem;
+  padding: 0 1.6rem;
+}
+
+.chat-input input::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--grey);
+}
+
+.chat-input label {
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--purple);
+  cursor: pointer;
+}
+
+/* loading動畫 */
+
+#loading {
+  position: absolute;
+}
+
+#loading img {
+  width: 400px;
+  height: auto;
+}
+
+#userImage, #userVideo {
+  width: 400px;
+  height: auto;
+}
+
+/* 頁面切換動畫效果 */
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 100%;
+  transition: left 0.5s ease-in-out;
+}
+
+.page.active {
+  left: 0;
+}
+
+.page:not(.active) {
+  left: -100%;
+}
+
+.centered-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* 調整按鈕之間的間距 */
+  flex-wrap: wrap; /* 如果按鈕太多可以換行 */
+  /* 調整 margin-top 使按鈕出現在你要的位置 */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.btn-pad {
+  margin: 15px;
+}
+
+/* 添加媒體查詢以實現響應式設計 */
+@media (max-width: 1200px) {
+  .chat-bg {
+    margin-top: 60px;
+  }
+
+  .wrapper {
+    width: 95%;
+    padding: 0 20px 20px 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container-left, .container-right {
+    flex: none;
+    width: 100%;
+  }
+
+  .image-display {
+    width: 90%;
+  }
+
+  .wrapper {
+    height: 70vh;
+  }
+
+  .chat-page {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .chat-bg {
+    margin-top: 40px;
+  }
+
+  .image-display {
+    width: 100%;
+  }
+
+  .thumbnail {
+    width: 80px;
+  }
+
+  .wrapper {
+    border-radius: 3rem;
+    padding: 0 15px 15px 15px;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .user-msg, .user2 .user-msg {
+    max-width: 75%;
+  }
+
+  .user2 .user-msg {
+    float: right;
+  }
+
+  .user2 .user-img {
+    float: right;
+    margin-left: 10px;
+  }
+
+  .user-msg {
+    width: 75%;
+  }
+
+  .user-msg p {
+    font-size: 11px;
+    padding: 0.8rem;
+  }
+
+  .user2 {
+    flex-direction: row-reverse;
+  }
+
+  .user2 .user-msg {
+    max-width: 75%;
+  }
+
+  .user2 .user-msg p {
+    font-size: 11px;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .chat-bg {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .thumbnail {
+    width: 60px;
+  }
+
+  .wrapper {
+    height: 65vh;
+  }
+
+  .chat-page {
+    height: 45vh;
+  }
+
+  .user-img {
+    width: 30px;
+  }
+
+  .user-msg, .user2 .user-msg {
+    max-width: 70%;
+  }
+
+  .user-msg {
+    width: 70%;
+  }
+
+  .chat-input input {
+    font-size: 14px;
+  }
+
+  .chat-input label {
+    font-size: 16px;
+  }
+
+  .centered-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .user2 .user-msg {
+    max-width: none; /* 移除最大寬度限制 */
+    width: auto; /* 讓寬度自動調整 */
+  }
+
+  .user2 .user-img {
+    width: 30px;
+  }
+}
+
+/* 針對極小屏幕的額外調整 */
+@media (max-width: 320px) {
+  .wrapper {
+    padding: 0 10px 10px 10px;
+  }
+
+  .user-msg {
+    width: 65%;
+  }
+
+  .chat-input input {
+    font-size: 12px;
+  }
+
+  .chat-input label {
+    font-size: 14px;
+  }
+}

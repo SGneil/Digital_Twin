@@ -1,0 +1,12 @@
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"請問如何重設我的密碼？"},{"role":"assistant","content":"您可以通過應用程式的設定選項找到“重設密碼”功能，並按照步驟操作來重設您的密碼。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"這個APP能做什麼？"},{"role":"assistant","content":"這個APP可以幫助您管理日常任務、追蹤進度、設置提醒，並提供個性化的建議來提高您的效率。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"我如何聯繫客服？"},{"role":"assistant","content":"您可以通過APP內的“聯繫我們”功能與客服團隊聯繫，我們隨時樂意為您提供幫助。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"這個APP是否免費？"},{"role":"assistant","content":"APP提供免費版和高級版。免費版包含基本功能，而高級版提供更多進階功能，您可以根據需求選擇合適的版本。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"我可以在多個設備上使用這個APP嗎？"},{"role":"assistant","content":"是的，您可以在多個設備上使用這個APP，只需使用相同的帳戶登錄即可同步您的資料。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"這個APP支持哪些語言？"},{"role":"assistant","content":"目前這個APP支持多種語言，包括英文、中文、西班牙文等。您可以在設定中選擇您偏好的語言。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"我的資料是否安全？"},{"role":"assistant","content":"我們非常重視您的隱私和數據安全。所有資料都會被加密保護，並遵守相關的隱私政策。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"我需要網路連線才能使用這個APP嗎？"},{"role":"assistant","content":"某些功能需要網路連線，但大部分功能可以在離線模式下使用。您可以在網路連線後同步資料。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"這個APP如何幫助我提高效率？"},{"role":"assistant","content":"這個APP提供任務管理、提醒和個性化建議等功能，幫助您更好地規劃和管理時間，提高工作效率。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"如何更新這個APP到最新版本？"},{"role":"assistant","content":"您可以通過應用商店找到這個APP並點擊更新。我們建議您保持APP為最新版本，以獲取最新的功能和安全更新。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"APP出現問題，我該怎麼辦？"},{"role":"assistant","content":"您可以嘗試重新啟動APP或重啟設備。如果問題依然存在，請聯繫我們的客服團隊尋求幫助。"}]}
+{"messages":[{"role":"system","content":"你是一個AI專員，幫助回答顧客關於APP的常見問題。"},{"role":"user","content":"我可以自訂APP的主題或介面嗎？"},{"role":"assistant","content":"是的，這個APP提供多種主題選項，您可以在設定中選擇或自訂界面以符合您的偏好。"}]}
